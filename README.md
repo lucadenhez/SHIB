@@ -1,4 +1,4 @@
-## SHIB
+# SHIB
 
 This website is for viewing the price of the ***Shiba Inu Altcoin!*** The design of this website is alike Robinhood's, but it looks better. Much pretty, shiny stonks. And of course this website has *SHIB* unalike Robinhood.
 
