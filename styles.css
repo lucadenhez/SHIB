@@ -45,11 +45,6 @@ h1 {
     margin-top: -10px;
 }
 
-mark.balance {
-    color: #09B051;
-    background: none;
-}
-
 .container {
     overflow: hidden;
     position: relative;
