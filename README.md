@@ -14,5 +14,4 @@ If any of you would like to help support my website development, here's my *DOGE
 
 [https://lucadenhez.github.io/SHIB](https://lucadenhez.github.io/SHIB)
 
-
-## This website is under development, so expect some outages
+**This website is under development, so expect some outages**
