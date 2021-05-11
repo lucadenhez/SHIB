@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+## SHIB
 
-You can use the [editor on GitHub](https://github.com/lucadenhez/SHIB/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+This website is for viewing the price of the ***Shiba Inu Altcoin!*** The design of this website is alike Robinhood's, but it looks better, much pretty, and of course supports this crypto.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Support
 
-### Markdown
+If any of you would like to help support my website development, here's my *DOGE* address:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**D6h7JtNag4mUgKKwpsdEpiCrqCNcrZw35i**
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lucadenhez/SHIB/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+(It would be great if Crypto.com could recieve SHIB payments)
