@@ -27,7 +27,7 @@ h1 {
     /* text-shadow: 3px 3px 8px #4605eb; */
 }
 
-#tokens {
+#tokensAmount {
     color: white;
     font-family: "San Francisco";
     font-weight: 400;
@@ -70,4 +70,27 @@ h1 {
     font-weight: 400;
     font-size: 90%;
     padding: 175px 100px;
+}
+
+#enterTokens {
+    padding: 7px 10px;
+    border: 2px solid #027fe6;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: border-width 0.2s linear;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    margin-top: -61px;
+    margin-left: 300px;
+}
+
+#enterTokens:focus {
+    border: 4px solid #027fe6;
+    color: white;
+    outline: none;
+}
+
+#enterTokens[value=""] {
+    color: transparent;
 }
