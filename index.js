@@ -1,10 +1,58 @@
 var inLoop1 = false;
 var inLoop2 = false;
 
+var currency = "USD";
+var currencySymbol = "$";
+
 window.onload = function () {
+    Particles.init({
+        selector: ".background",
+        speed: 0.2,
+        color: "#FFFFFF",
+        sizeVariations: 5
+    });
     getPrice();
     checkForTokens();
 };
+
+function changeCurrency() {
+    var radios = document.getElementsByName("currency");
+
+    for (i = 0; i , radios.length; i++) {
+        if (radios[i].checked) {
+            currency = radios[i].id;
+
+            if (currency == "USD") {
+                currencySymbol = "$";
+            }
+            else if (currency == "GBP") {
+                currencySymbol = "£";
+            }
+            else if (currency == "CAD") {
+                currencySymbol = "C$";
+            }
+            else {
+                currencySymbol = "€";
+            }
+            break
+        }
+    }
+
+    console.log("Set currency to: " + currency);
+    getPrice(currency);
+    
+    var tokensOwned = Cookies.get("tokens");
+
+    if (typeof tokensOwned === "undefined") {
+        console.log("[Status] No cookie detected. Waiting for input...");
+    }
+    else {
+        console.log("[Status] Cookie detected. Tokens Owned: " + tokensOwned);
+        document.getElementById("enterTokens").value = tokensOwned;
+
+        getBalance(tokensOwned)
+    }
+}
 
 function setTokens() {
     var tokens = document.getElementById("enterTokens");
@@ -54,8 +102,8 @@ function getPriceCallback(_callback) {
             var json = JSON.parse(client.responseText);
             var price = json.data.prices.latest;
 
-            document.getElementById("price").innerText = "$" + price.substr(0, 10);
-            console.log("[Status] Successfully Got SHIB Price [$" + price + "]");
+            document.getElementById("price").innerText = currencySymbol + price.substr(0, 10);
+            console.log("[Status] Successfully Got SHIB Price [" + currencySymbol + price + "]");
         }
         else if (this.readyState == 4 && this.status != 200) {
             document.getElementById("price").innerText = "Unable to Fetch Price";
@@ -65,11 +113,11 @@ function getPriceCallback(_callback) {
         _callback();
     };
 
-    client.open("GET", "https://www.coinbase.com/api/v2/assets/prices/d6031388-71ab-59c7-8a15-a56ec20d6080?base=USD", true);
+    client.open("GET", "https://www.coinbase.com/api/v2/assets/prices/d6031388-71ab-59c7-8a15-a56ec20d6080?base=" + currency, true);
     client.send();
 }
 
-function getPrice() {
+function getPrice(currency) {
     var client = new XMLHttpRequest();
 
     client.onreadystatechange = function () {
@@ -77,8 +125,8 @@ function getPrice() {
             var json = JSON.parse(client.responseText);
             var price = json.data.prices.latest;
 
-            document.getElementById("price").innerText = "$" + price.substr(0, 10);
-            console.log("[Status] Successfully Got SHIB Price [$" + price + "]");
+            document.getElementById("price").innerText = currencySymbol + price.substr(0, 10);
+            console.log("[Status] Successfully Got SHIB Price [" + currencySymbol + price + "]");
         }
         else if (this.readyState == 4 && this.status != 200) {
             document.getElementById("price").innerText = "Unable to Fetch Price";
@@ -87,7 +135,7 @@ function getPrice() {
         }
     };
 
-    client.open("GET", "https://www.coinbase.com/api/v2/assets/prices/d6031388-71ab-59c7-8a15-a56ec20d6080?base=USD", true);
+    client.open("GET", "https://www.coinbase.com/api/v2/assets/prices/d6031388-71ab-59c7-8a15-a56ec20d6080?base=" + currency, true);
     client.send();
 }
 
@@ -121,10 +169,15 @@ function getBalance(tokensOwned) {
     getPriceCallback(function () {
         var price = document.getElementById("price");
         try {
-            price = price.innerText.substr(1, price.innerText.length);
+            if (currency == "CAD") {
+                price = price.innerText.substr(2, price.innerText.length);
+            }
+            else {
+                price = price.innerText.substr(1, price.innerText.length);
+            }
             var balance = (parseFloat(price) * parseInt(tokensOwned)).toString().substr(0, 10);
-            document.getElementById("value").innerText = "Balance - $" + balance;
-            console.log("[Status] Set Balance to $" + balance);
+            document.getElementById("value").innerText = "Balance - " + currencySymbol + balance;
+            console.log("[Status] Set Balance to " + currencySymbol + balance);
         }
         catch (ex) {
             document.getElementById("usd").innerText = "Balance - Unable to Calculate Balance";
