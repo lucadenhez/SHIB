@@ -19,7 +19,7 @@
         <h1>Price of SHIB</h1>
         <p id="price">Price Loading...</p>
 
-        <form action="#">
+        <form id="currency">
 
             <div class="owned-container">
                 <label for='tokensAmount' id="tokensAmountLabel">Tokens Owned - </label>
@@ -30,12 +30,20 @@
 
             <div class="currency-container">
                 <div>
-                    <label for="USD">USD</label>
-                    <input type="radio" name="currency" id="usd">
+                    <label for="USD">USD 🇺🇸</label>
+                    <input type="radio" name="currency" id="USD" onclick="changeCurrency();" checked>
                 </div>
                 <div>
-                    <label for="gbp">GBP</label>
-                    <input type="radio" name="currency" id="gbp">
+                    <label for="gbp">GBP 🇬🇧</label>
+                    <input type="radio" name="currency" id="GBP" onclick="changeCurrency();">
+                </div>
+                <div>
+                    <label for="cad">CAD 🇨🇦</label>
+                    <input type="radio" name="currency" id="CAD" onclick="changeCurrency();">
+                </div>
+                <div>
+                    <label for="eur">EUR 🇪🇺</label>
+                    <input type="radio" name="currency" id="EUR" onclick="changeCurrency();">
                 </div>
             </div>
         </form>
@@ -48,6 +56,8 @@
         <p>To the Moon! 🚀 | Luca Denhez <br> A small contribution would be greatly appreciated :)
             D6h7JtNag4mUgKKwpsdEpiCrqCNcrZw35i (DOGE)</p>
     </footer>
+    <canvas class="background"></canvas>
+    <script type="text/javascript" src="particles.min.js"></script>
 </body>
 
 </html>
