@@ -1,7 +1,29 @@
+:root {
+  --bg-color-1: #101112;
+  --bg-color-2: #eba910;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -11,7 +33,9 @@
 
 body {
   color: white;
-  background-color: #101112;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 45s ease infinite;
   overflow: hidden;
   font-family: "San Francisco";
 }
@@ -27,7 +51,7 @@ body {
   position: absolute;
   bottom: 10vh;
   left: 10vw;
-  filter: blur(7px);
+  filter: blur(5px);
   z-index: -1;
 }
 
@@ -89,6 +113,7 @@ form {
 .currency-container {
   display: flex;
   flex-direction: row;
+  margin-top: 1em;
 }
 
 .currency-container input {
@@ -140,4 +165,13 @@ footer {
     bottom: -12vh;
     left: 35vw;
   }
+}
+
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
