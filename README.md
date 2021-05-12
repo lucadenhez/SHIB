@@ -16,7 +16,7 @@ If any of you would like to help support my website development, here's my *DOGE
 
 # Credits
 
-[https://github.com/lucadenhez](@lucadenhez) (Me) and [https://github.com/michael86](@michael86)
+[@lucadenhez](https://github.com/lucadenhez) and [@michael86](https://github.com/michael86)
 
 # Thanks for taking a look at my website!
 
