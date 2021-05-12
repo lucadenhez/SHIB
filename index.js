@@ -106,7 +106,7 @@ function getPriceCallback(_callback) {
             console.log("[Status] Successfully Got SHIB Price [" + currencySymbol + price + "]");
         }
         else if (this.readyState == 4 && this.status != 200) {
-            document.getElementById("price").innerText = "Unable to Fetch Price";
+            document.getElementById("price").innerText = "Unable to Fetch Price (Bug, wait 10 seconds)";
 
             console.log("[Status] Failed to get SHIB Price | Code: " + client.status)
         }
@@ -129,7 +129,7 @@ function getPrice(currency) {
             console.log("[Status] Successfully Got SHIB Price [" + currencySymbol + price + "]");
         }
         else if (this.readyState == 4 && this.status != 200) {
-            document.getElementById("price").innerText = "Unable to Fetch Price";
+            document.getElementById("price").innerText = "Unable to Fetch Price (Bug, wait 10 seconds)";
 
             console.log("[Status] Failed to get SHIB Price | Code: " + client.status)
         }
