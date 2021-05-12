@@ -9,21 +9,45 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="background-img">
+        <img id="shib" src="shib.png" draggable="false">
+    </div>
+
+    <section class="container">
+
         <h1>Price of SHIB</h1>
         <p id="price">Price Loading...</p>
-        <p id="tokensAmount">Tokens Owned - </p>
-        <input id="enterTokens" type="text" placeholder="Please Input Balance" spellcheck="false"
-            onkeydown="check(this)"></input>
-        <p id="usd">Balance - Loading...</p>
-        <img id="shib" src="shib.png" draggable="false">
 
-        <footer>
-            <p id="footer">To the Moon! 🚀 | Luca Denhez | A small contribution would be greatly appreciated :) |
-                D6h7JtNag4mUgKKwpsdEpiCrqCNcrZw35i (DOGE)</p>
-        </footer>
+        <form action="#">
 
-    </div>
+            <div class="owned-container">
+                <label for='tokensAmount' id="tokensAmountLabel">Tokens Owned - </label>
+
+                <input id="enterTokens" type="text" placeholder="Please Input Balance" spellcheck="false"
+                    onkeydown="check(this)"></input>
+            </div>
+
+            <div class="currency-container">
+                <div>
+                    <label for="USD">USD</label>
+                    <input type="radio" name="currency" id="usd">
+                </div>
+                <div>
+                    <label for="gbp">GBP</label>
+                    <input type="radio" name="currency" id="gbp">
+                </div>
+            </div>
+        </form>
+
+        <p id="value">Balance:</p>
+
+    </section>
+
+    <footer>
+        <p>To the Moon! 🚀 | Luca Denhez <br> A small contribution would be greatly appreciated :)
+            D6h7JtNag4mUgKKwpsdEpiCrqCNcrZw35i (DOGE)</p>
+    </footer>
 </body>
 
 </html>
